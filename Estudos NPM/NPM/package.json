@@ -1,0 +1,20 @@
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Giovani Ramos",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "nextjs": "^0.0.3",
+    "react": "^19.0.0",
+    "tailwindcss": "^4.0.12"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  }
+}
