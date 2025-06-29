@@ -8,7 +8,11 @@
   <li>CSS</li>
   <li>Typescript</li>
   <li>React</li>
-  <li>NodeJs</li>
+  <li>NodeJs
+    <ul>
+    <li>Nodemon</li>
+    </ul>
+  </li>
   <li>Jest</li>
   <li>NPM</li>
 </ul>
