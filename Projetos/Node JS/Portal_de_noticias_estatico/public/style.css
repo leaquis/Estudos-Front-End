@@ -107,3 +107,28 @@ section.noticia-destaque > .center {
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1;
 }
+
+section.outras-noticias{
+    background-color: #EAEAEA;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+section.outras-noticias h2{
+    font-size: 54px;
+}
+
+.ultimas {
+    width: 70%;
+    padding: 0 30px;
+}
+
+.mais-lidas {
+    width: 30%;
+}
+
+.mais-lidas > h3{
+    background-color: #3F51B5;
+    color: white;
+    text-align: center;
+}
