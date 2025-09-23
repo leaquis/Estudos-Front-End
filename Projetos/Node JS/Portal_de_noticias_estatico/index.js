@@ -18,15 +18,16 @@ app.get('/', (req, res) => {
     console.log(req.query);
 
     if(req.query.busca == null){
-        res.render('home', {})
+        res.render('home', {});
     } else {
-        res.send('Você buscou: ' + req.query.busca)
+        res.render('busca', {});
     }
 
 })
 
 app.get('/:slug', (req, res) => {
-    res.send(req.params.slug)
+    //res.send(req.params.slug)
+    res.render('single', {});
 })
 
 app.listen(5000, () => {
