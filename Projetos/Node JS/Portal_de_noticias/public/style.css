@@ -105,7 +105,12 @@ section.noticia-destaque > .center {
     z-index: 2;
 }
 
+.title-destaque-descricao a{
+    text-decoration: none;
+}
+
 .title-destaque-descricao h2 {
+    color: white;
     font-size: 64px;
     margin: 20px 0;
 }

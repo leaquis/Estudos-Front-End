@@ -5,7 +5,9 @@ const path = require('path');
 
 const app = express();
 
-mongoose.connect('mongodb://Giovani:jbKqgfubAtHYBaNh@ac-wlplasf-shard-00-00.vqxbla3.mongodb.net:27017,ac-wlplasf-shard-00-01.vqxbla3.mongodb.net:27017,ac-wlplasf-shard-00-02.vqxbla3.mongodb.net:27017/?ssl=true&replicaSet=atlas-vbolwu-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0',{useNewUrlParser: true, useUnifiedTopology: true}).then(function(){
+const Posts = require('./Posts.js')
+
+mongoose.connect('mongodb://Giovani:d9ZMsOZpLOYrBHt2@ac-wlplasf-shard-00-00.vqxbla3.mongodb.net:27017,ac-wlplasf-shard-00-01.vqxbla3.mongodb.net:27017,ac-wlplasf-shard-00-02.vqxbla3.mongodb.net:27017/?ssl=true&replicaSet=atlas-vbolwu-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0',{useNewUrlParser: true, useUnifiedTopology: true}).then(function(){
     console.log('Conectado com sucesso')
 }).catch(function(err){
     console.log(err.message);
@@ -22,10 +24,12 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, '/pages'));
 
 app.get('/', (req, res) => {
-    console.log(req.query);
 
     if(req.query.busca == null){
-        res.render('home', {});
+        Posts.find({}).sort({'_id': -1}).exec(function(err,posts){
+            console.log(posts[0]);
+            res.render('home', {posts:posts});
+        })
     } else {
         res.render('busca', {});
     }
