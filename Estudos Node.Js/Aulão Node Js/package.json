@@ -1,0 +1,15 @@
+{
+  "name": "aulao-node-js",
+  "version": "1.0.0",
+  "description": "node-js",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
