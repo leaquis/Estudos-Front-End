@@ -1,10 +1,10 @@
 import "./App.css";
-import "./components/FirstComponent";
+import FirstComponent from "./components/FirstComponent";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Fundamentos React</h1>
+    <div>
+      <FirstComponent />
     </div>
   );
 }
