@@ -1,10 +1,16 @@
+import { useState } from "react";
 import "./App.css";
+
 import City from "../src/assets/city.jpg";
 import ManageData from "./components/ManageData";
 import ListRender from "./components/ListRender";
 import ConditionalRender from "./components/ConditionalRender";
+import ShowUserName from "./components/ShowUserName";
 
 function App() {
+  const name = "Giovani";
+  const [userName] = useState("Roberta");
+
   return (
     <div className="App">
       <h1>React Intermediario</h1>
@@ -23,6 +29,7 @@ function App() {
       <ManageData />
       <ListRender />
       <ConditionalRender />
+      <ShowUserName name={userName} />
     </div>
   );
 }
