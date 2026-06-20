@@ -7,7 +7,7 @@ const url = "http://localhost:3000/products";
 function App() {
   const [products, setProducts] = useState([]);
 
-  const { data: items } = useFetch(url);
+  const { data: items, httpConfig, loading, error } = useFetch(url);
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -32,17 +32,19 @@ function App() {
       price,
     };
 
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(product),
-    });
+    // const res = await fetch(url, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(product),
+    // });
 
-    const addedProduct = await res.json();
+    // const addedProduct = await res.json();
 
-    setProducts((prevProducts) => [...prevProducts, addedProduct]);
+    // setProducts((prevProducts) => [...prevProducts, addedProduct]);
+
+    httpConfig(product, "POST");
 
     setName("");
     setPrice("");
@@ -51,14 +53,18 @@ function App() {
   return (
     <div className="App">
       <h1>Lista de Produtos</h1>
-      <ul>
-        {items &&
-          items.map((product) => (
-            <li key={product.id}>
-              {product.name} - {product.price}
-            </li>
-          ))}
-      </ul>
+      {loading && <p>Carregando dados ..</p>}
+      {error && <p>{error}</p>}
+      {!error && (
+        <ul>
+          {items &&
+            items.map((product) => (
+              <li key={product.id}>
+                {product.name} - {product.price}
+              </li>
+            ))}
+        </ul>
+      )}
       <div className="add-product">
         <form onSubmit={handleSubmit}>
           <label>
@@ -79,7 +85,8 @@ function App() {
               onChange={(e) => setPrice(e.target.value)}
             />
           </label>
-          <input type="submit" value="Criar" />
+          {loading && <input type="submit" disabled value="Aguarde!" />}
+          {!loading && <input type="submit" value="Criar" />}
         </form>
       </div>
     </div>
