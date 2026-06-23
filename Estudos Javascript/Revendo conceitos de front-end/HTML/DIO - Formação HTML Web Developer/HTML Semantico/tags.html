@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tags HTML 5 - Estrutural</title>
+    <style>
+      nav ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+      }
+
+      nav ul li a {
+        padding: 10px 15px;
+        color: blue;
+        text-decoration: none;
+        border-radius: 8px;
+      }
+
+      nav ul li a:hover {
+        color: white;
+        background: blue;
+      }
+
+      blockquote {
+        background: rgb(238, 237, 237);
+        padding: 15px;
+        margin-left: 0px;
+        border-left: red solid 5px;
+      }
+
+      article time {
+        font-style: italic;
+      }
+
+      article q {
+        font-style: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Item 1</a></li>
+          <li><a href="#">Item 2</a></li>
+          <li><a href="tel:+5515984938984">Telefone</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      Main
+      <header>Header</header>
+      <br />
+      <article>
+        <p>Pagina de estudo de article</p>
+        <article>
+          <p>teste de um article dentro de outro</p>
+        </article>
+        <p>Data dentro do article <time pubdate>21/12/1997</time></p>
+        <blockquote cite="https://www.youtube.com/watch?v=-ANx41sZNIQ">
+          <p>Busquem conhecimento</p>
+        </blockquote>
+        <p>teste da TAG <q>Q</q></p>
+      </article>
+      <br />
+      <footer>
+        <address>R: das Flores</address>
+      </footer>
+      <br />
+      <section>
+        <header>Header 2</header>
+        <footer>Footer 2</footer>
+      </section>
+      <br />
+      <aside>aaaaaa</aside>
+      <br />
+    </main>
+    <footer></footer>
+  </body>
+</html>
