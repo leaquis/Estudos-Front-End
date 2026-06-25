@@ -40,5 +40,16 @@
       <summary>Frase do gerador de Lero Lero</summary>
       <p>A nível organizacional, a consolidação das estruturas agrega valor ao estabelecimento dos procedimentos normalmente adotados</p>
     </details>
-    
+    <meter max="100" min="0" value="50"></meter>
+    <progress id="progress" max="100" min="0" value="0"></progress>
+
+    <script>
+      var progress = document.getElementById('progress');
+      const interval = setInterval(() => {
+        progress.value += 10;
+        if (progress.value >= 100) {
+          progress.value = 0
+        }
+      }, 1000)
+    </script>
 </html>
