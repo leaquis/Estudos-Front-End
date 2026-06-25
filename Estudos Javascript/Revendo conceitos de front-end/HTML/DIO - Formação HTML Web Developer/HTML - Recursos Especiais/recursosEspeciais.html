@@ -37,8 +37,9 @@
     </pre>
 
     <details>
+      <input type="text" id="busca">
       <summary>Frase do gerador de Lero Lero</summary>
-      <p>A nível organizacional, a consolidação das estruturas agrega valor ao estabelecimento dos procedimentos normalmente adotados</p>
+      <p id="lerolero">A nível organizacional, a consolidação das estruturas agrega valor ao estabelecimento dos procedimentos normalmente adotados</p>
     </details>
     <meter max="100" min="0" value="50"></meter>
     <progress id="progress" max="100" min="0" value="0"></progress>
@@ -51,5 +52,17 @@
           progress.value = 0
         }
       }, 1000)
+
+      var searchField = document.getElementById("busca")
+      var descriptionObject = document.getElementById("lerolero")
+      var textToSearch = descriptionObject.innerHTML;
+
+      function realizaBusca(busca) {
+        const regex = new RegExp(`(${busca})(?!<mark))*</mark>)+`, 'ig');
+        const ocurrences = textToSearch.match(regex);
+        descriptionObject.innerHTML = textToSearch.replace(regex, `<mark>${busca}</mark>`)
+      }
+
+      searchField.addEventListener('keyup', (e) => realizaBusca(e.target.value))
     </script>
 </html>
