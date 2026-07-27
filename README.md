@@ -8,6 +8,9 @@
   <li>CSS</li>
   <li>Typescript</li>
   <li>React</li>
+    <ul>
+    <li>React Routes</li>
+    </ul>
   <li>NodeJs
     <ul>
     <li>Nodemon</li>
