@@ -15,6 +15,5 @@
       "name": "Boné aba reta",
       "price": 29.9
     }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+  ]
 }
